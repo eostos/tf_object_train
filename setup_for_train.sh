@@ -44,7 +44,8 @@ protoc object_detection/protos/*.proto --python_out=.
 
 echo "🛠️ Installing TF Object Detection API"
 cp object_detection/packages/tf1/setup.py .
-python3.7 -m pip install .
+python3.7 -m pip install . --index-url https://pypi.org/simple --timeout 60 --retries 10 -v
+
 
 echo "📁 Creating data directory"
 cd ../..
